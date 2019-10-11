@@ -9,6 +9,18 @@ import { MaterialModule } from './material.module';
 import { Page1Component } from './components/page1/page1.component';
 import { Page2Component } from './components/page2/page2.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from "@angular/forms";
+
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { ListComponent } from './components/list/list.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ComponentsComponent } from './components/components.component';
+import { UserComponent } from './components/user/user.component';
+import { UserService } from './shared/user.service';
+import { GoogleAPIService } from './services/gcp-test.service';
+
 
 
 @NgModule({
@@ -16,16 +28,24 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     NavbarComponent,
     Page1Component,
-    Page2Component
+    Page2Component,
+    ListComponent,
+    ComponentsComponent,
+    UserComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
-    HttpClientModule 
+    HttpClientModule ,
+    ReactiveFormsModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
-  providers: [],
+  providers: [UserService, GoogleAPIService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

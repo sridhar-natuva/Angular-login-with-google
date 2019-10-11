@@ -1,0 +1,19 @@
+<h1 class="display-4">Create user in Firestore</h1>
+<form #form="ngForm" >
+    <div class="form-control">
+        <input name="name" #name="ngModel" [(ngModel)]="service.formData.name" class="form-control" placeholder="Name" required>
+    </div>
+
+    <div class="form-control">
+        <input name="age" #name="ngModel" [(ngModel)]="service.formData.age" class="form-control" placeholder="Age" required>
+    </div>
+
+    <div class="form-control">
+        <input name="location" #name="ngModel" [(ngModel)]="service.formData.location" class="form-control" placeholder="Location" required>
+    </div>
+
+    <div class="form-group">
+        <button (click)="onSubmit(form)" type="button" class="submit btn btn-lg btn-block btn-info">Submit</button>
+    </div>
+
+</form>
