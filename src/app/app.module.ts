@@ -20,6 +20,7 @@ import { ComponentsComponent } from './components/components.component';
 import { UserComponent } from './components/user/user.component';
 import { UserService } from './shared/user.service';
 import { GoogleAPIService } from './services/gcp-test.service';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 
 
@@ -43,7 +44,8 @@ import { GoogleAPIService } from './services/gcp-test.service';
     ReactiveFormsModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule  
   ],
   providers: [UserService, GoogleAPIService],
   bootstrap: [AppComponent]

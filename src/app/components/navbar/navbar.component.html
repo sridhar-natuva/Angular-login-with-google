@@ -2,4 +2,17 @@
   <button mat-button [routerLink]="['/page1']">Page 1</button>
   <button mat-button [routerLink]="['/page2']">Page 2</button>
   <button mat-button [routerLink]="['/list']">list</button>
+
+  <span class="example-spacer"></span>
+  <div *ngIf = "auth.user$ | async as user; else login">
+ 
+   Welcome, {{ user.email }}
+
+    <button class="button" mat-raised-button color="warn" (click)="auth.signOut()">Sign Out</button> 
+  </div>
+
+<ng-template #login>
+    <button class="button" mat-raised-button color="primary" (click)="auth.googleSignin()">Login with Google</button>
+</ng-template>
+
 </mat-toolbar>
