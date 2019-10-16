@@ -6,13 +6,13 @@
   <span class="example-spacer"></span>
   <div *ngIf = "auth.user$ | async as user; else login">
  
-   Welcome, {{ user.email }}
+   Welcome, {{ user.displayName }}
 
     <button class="button" mat-raised-button color="warn" (click)="auth.signOut()">Sign Out</button> 
   </div>
 
 <ng-template #login>
-    <button class="button" mat-raised-button color="primary" (click)="auth.googleSignin()">Login with Google</button>
+    <button class="button" mat-raised-button color="primary" (click)="auth.googleSignin()">Login with Twitter</button>
 </ng-template>
 
 </mat-toolbar>

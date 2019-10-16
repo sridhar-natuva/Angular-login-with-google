@@ -21,6 +21,7 @@ import { UserComponent } from './components/user/user.component';
 import { UserService } from './shared/user.service';
 import { GoogleAPIService } from './services/gcp-test.service';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -33,6 +34,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     ListComponent,
     ComponentsComponent,
     UserComponent,
+    LoginComponent,
     
   ],
   imports: [
