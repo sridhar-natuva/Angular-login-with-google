@@ -29,13 +29,13 @@ export class AuthService {
   }
 
   async googleSignin() {
-    const provider = new auth.TwitterAuthProvider();
+    const provider = new auth.FacebookAuthProvider();
     const credential = await this.afAuth.auth.signInWithPopup(provider);
     return this.updateUserData(credential.user)
   }
 
   async twitterSignin() {
-    const provider = new auth.TwitterAuthProvider();
+    const provider = new auth.FacebookAuthProvider();
     const credential = await this.afAuth.auth.signInWithPopup(provider);
     return this.updateUserData(credential.user)
   }
